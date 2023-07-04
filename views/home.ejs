@@ -1,0 +1,12 @@
+<%- include("partials/header"); %>
+
+<h1>Home</h1>
+<p><%= homeStartingContent %></p>
+<a href="/compose" class="compose"><button type="button" class="btn btn-default">Compose</button></a>
+<% for(let post of posts) { %>
+   <h1><%= post.title %></h1>
+   <!-- below we are using the substring javaScript method to truncate the post -->
+   <p><%= post.content.substring(0, 100) + "..." %><a href="/post/<%=post.title%>">Read more</a></p>   
+<% } %>
+
+<%- include("partials/footer"); %>
